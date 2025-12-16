@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-color: #ffffff;
+    --accent: #00d4ff;
+}
+
+body.dark {
+    --glass-bg: rgba(30, 30, 30, 0.6);
+}
+
+/* Full screen animated background */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        -45deg,
+        #1d2671,
+        #c33764,
+        #0f2027,
+        #2c5364
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: var(--text-color);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container covers full screen */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SINGLE CARD */
+.card {
+    width: 360px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+    text-align: center;
+}
+
+/* Inputs & Selects */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    color: white;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.04);
+}
+
+.swap-btn {
+    background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+/* Result */
+#result {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.cold { color: #00c3ff; }
+.moderate { color: #7CFF6B; }
+.hot { color: #ff6b6b; }
+
+#description {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* History */
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+li {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* History container */
+.history-container {
+    margin-top: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Each history item */
+.history-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* From & To blocks */
+.history-from,
+.history-to {
+    font-weight: 500;
+}
+
+/* Arrow */
+.history-arrow {
+    opacity: 0.7;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.app-title img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Inputs & Selects — FIXED SIZE ISSUE */
+input,
+select,
+button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Inputs & Selects */
+input, select {
+    height: 44px;           
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+
+/* 📱 Mobile Optimization */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 420px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .app-title {
+        font-size: 22px;
+    }
+
+    input, select, button {
+        font-size: 16px;
+        height: 48px;
+    }
+
+    #result {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}

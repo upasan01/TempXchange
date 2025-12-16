@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>TempXchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2 class="app-title">
+            <img src="favicon.png" alt="ThermoShift Icon">
+            TempXchange 
+        </h2>
+        <input type="number" id="tempInput" placeholder="Enter temperature">
+
+        <select id="fromUnit">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <button class="swap-btn" onclick="swapUnits()">Swap</button>
+
+        <select id="toUnit">
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="celsius">Celsius (°C)</option>
+            <option value="kelvin">Kelvin (K)</option>
+        </select>
+
+        <div id="result">Result: --</div>
+        <div id="description"></div>
+
+        <h3>Conversion History</h3>
+        <div class="history-container" id="history"></div>
+        <button onclick="clearHistory()">Clear History</button>
+
+
+        <button onclick="toggleTheme()">Toggle Dark Mode</button>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
